@@ -1,23 +1,29 @@
 #include "stdio.h"
-void doSomething(int* ptr);
+void myFun(int* a, int* b);
 int main(){
 
+    int firstData=10;
+    int secondData=20;
+//    printf("Enter first Value:");
+//    scanf("%d",&firstData);
+//
+//    printf("Enter Second value:");
+//    scanf("%d",&secondData);
 
-    int data=10;
-    int* ptr;
+    printf("Before Passing firstData = %d , SecondData = %d ",firstData , secondData);
 
-    ptr = &data ;
+    myFun(&firstData , &secondData);
 
-    doSomething(ptr);
+    //printf("Return Value : %d\n",returnValue);
 
-    printf(" value of ptr %d ",*ptr);
+    printf("\nAfter Passing firstData = %d , SecondData = %d \n",firstData , secondData);
 
     return 0;
 }
 
-void doSomething(int* ptr){
+void myFun(int* a, int* b){
 
-    (*ptr)++;
-
-
+    int temp= *a*10;
+    *a = *b*10;
+    *b = temp;
 }
