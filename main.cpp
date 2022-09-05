@@ -1,66 +1,31 @@
-@@ -0,0 +1,65 @@
+// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
-// Created by National Cyber City on 8/30/2022.
-//
-// pointer store address of another variable
 
-#include "stdio.h"
-#include "string.h"
+// size * data =  4*3 = 12
 
-int main(){
-    int index=0;
+#include <iostream>
 
-    char myarr[10]={'N','C','C','\0'};
+int main()
+{
 
-    char myarr2[10]= {'G','E','n','i','u','s','\0'};
+    int x[10] = { 1, 50, 3, 10, 20 , 30 , 40 };
+    int* ptr;
 
-    char myarr3[10]={'H','E','L','L','o','\0'};
+    char a='a';
+    ptr = &x[2];
 
-    char totalArary[100];
+    printf("Address of Pointer %d\n",ptr);
 
-    for(int i =0 ; myarr[i] != '\0' ; i++){
-
-        totalArary[i] = myarr[i];
-        index = index + i;
-
-    }
-
-    printf(" myarr data: %s\n",totalArary);
-    printf(" Index number: %d\n",index);
+    printf("value of Pointer %d\n",*ptr);
 
 
-    for(int i =0 ; myarr2[i] != '\0' ; i++){
-
-        totalArary[index] = myarr2[i];
-        index++;
+    printf("*(ptr+1) = %d \n", *(ptr + 1));
 
 
-    }
-    printf(" myarr data: %s\n",totalArary);
-    printf(" Last Index number: %d\n",index);
+    printf("*(ptr+2)value = %d \n", *(ptr + 3));
 
-    for(int i =0 ; myarr3[i] != '\0' ; i++){
-
-        totalArary[index] = myarr3[i];
-        index++;
-    }
-    printf(" @myarr data: %s\n",totalArary);
-    printf(" @Last Index number: %d\n",index);
-
-
-    for(int x=0 ; x<index ; x++){
-
-        if( totalArary[x] == 'n'){
-
-            printf("We found at index %d \n",x);
-
-
-        }
-
-    }
-
-    printf(" Sizeof arr %d\n",sizeof(totalArary));
-
+    printf("*(ptr+2)address = %d \n", ptr + a);
 
     return 0;
+
 }

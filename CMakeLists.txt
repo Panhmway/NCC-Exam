@@ -3,4 +3,4 @@ project(hla)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(hla main.cpp)
+add_executable(hla main.cpp third.cpp)
