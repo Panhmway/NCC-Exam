@@ -1,74 +1,23 @@
 #include "stdio.h"
-#include "string.h"
-
+void doSomething(int* ptr);
 int main(){
-    int index=0;
-
-    char myarr[10]={'N','C','C','\0'};
-
-    char myarr2[10]= {'G','E','n','i','u','s','\0'};
-
-    char myarr3[10]={'H','E','L','L','o','\0'};
-
-    char totalArary[100];
-
-    for(int i =0 ; myarr[i] != '\0' ; i++){
-
-        totalArary[i] = myarr[i];
-        index = index + i;
-
-    }
-
-    printf(" myarr data: %s\n",totalArary);
-    printf(" Index number: %d\n",index);
 
 
-    for(int i =0 ; myarr2[i] != '\0' ; i++){
+    int data=10;
+    int* ptr;
 
-        totalArary[index] = myarr2[i];
-        index++;
+    ptr = &data ;
 
+    doSomething(ptr);
 
-    }
-    printf(" myarr data: %s\n",totalArary);
-    printf(" Last Index number: %d\n",index);
-
-    for(int i =0 ; myarr3[i] != '\0' ; i++){
-
-        totalArary[index] = myarr3[i];
-        index++;
-    }
-    printf(" @myarr data: %s\n",totalArary);
-    printf(" @Last Index number: %d\n",index);
-
-
-    for(int x=0 ; x<index ; x++){
-
-        if( totalArary[x] == 'n'){
-
-            printf("We found at index %d \n",x);
-
-
-        }
-
-    }
-
-    printf(" Sizeof arr %d\n",sizeof(totalArary));
-
-    char myarr[10]={'N','C','C'};
-
-    char myarr2[10]= {'G','E','n','i','u','s'};
-
-    char myString[100];
-    strcpy(myString,myarr);
-    strcpy(myString,myarr2);
-
-    printf("Data: %s\n",myString);
-
-    strcat(myarr,myarr2);
-
-    printf("Data: %s",myarr);
-    printf(" length Data: %d", strlen(myarr));
+    printf(" value of ptr %d ",*ptr);
 
     return 0;
+}
+
+void doSomething(int* ptr){
+
+    (*ptr)++;
+
+
 }
